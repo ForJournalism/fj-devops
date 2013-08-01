@@ -1,43 +1,46 @@
 # DevOps Course Outline
 
-----------------------
-
 You have an app running locally that lets people explore data. Great. How will anyone find it, though?  You can't serve this off your laptop.
 
 And if they do happen to find your app running on your laptop somehow, your localhost don't scale!
 
- You need to deploy it! But first, a quick word on... 
+You need to deploy it! But first, a quick word on... 
 
 ## Version Control
 
-Or will this be covered in each app-building course?
-
-And...
-
 ## Tests & Continuous Integration
 
-Ditto this topic.
+Are these topics going to be covered in each app-building course?
 
 ## Deployment
 
-What is it?
-  * Explainer
+What does "deploying an app" mean? Explainer TK.
 
-What are my options?
-  * capistrano / ruby
-  * fab / python
+### Options
 
-How often?
+* capistrano (ruby)
+* fab (python)
+* rpm/deb
 
-  * Scheduled releases
-  * Continuous deployment
+### Strategies
 
-## caching
+* Scheduled releases
+* Continuous deployment
+
+## Caching
+
 * in memory
-  * framework
-  * memcached
-  * redis
-  * varnish
+* persistent
+* headers
+* template or data fragments, entire pages
+
+### Software
+
+* [http](https://github.com/rtomayko/rack-cache)
+* [memcached](http://memcached.org/)
+* [redis](http://redis.io)
+* [varnish](https://www.varnish-cache.org/)
+* [nginx](http://nosql.mypopescu.com/post/17651985814/high-performance-rails-caching-with-redis-and-nginx)
 
 * persistent
   * database / inc redis
@@ -51,14 +54,21 @@ How often?
 * some of the many levels
   * local
   * in app
+  * in request like http headers
+  * external like varnish
   * layers to cache on and what to cache at each
 
-## monitoring
-  * system (load, CPU, memory)
-  * service (nginx, MySQL, etc)
-  * app
-  * external (pingdom, etc)
+## Monitoring
 
-## scaling
-  * manual, horizontal
-  * auto, ec2
+Things you can monitor:
+
+* system load/CPU/memory with things like monit, upstart
+* services (nginx, MySQL, etc) again with monit, upstart or similar
+* apps (memory usage, exceptions)
+* response times (internal or external ways like pingdom)
+
+## Scaling
+
+  * manual vs auto
+  * horizontal (throw more machines at it)
+  * optimization
