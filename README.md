@@ -4,9 +4,17 @@ You have an app running locally that lets people explore data. Great. How will a
 
 And if they do happen to find your app running on your laptop somehow, your localhost don't scale!
 
-You need to deploy it! But first, a quick word on... 
+We'll also cover basic terminology and concepts.
+
+## Definitions
+
+* Devops
+* Sysops
+* Secops/infosec
 
 ## Version Control
+
+See the GitHub for Journalism material.
 
 ## Tests & Continuous Integration
 
